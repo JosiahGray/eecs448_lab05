@@ -1,1 +1,21 @@
- 
+<html>
+<head>
+  <title> Create User </title>
+</head>
+
+<body>
+  <h1> Create User </h1>
+
+  <p>
+    Use the form below to create a new user.<br>
+    The User ID must be between 1 and 255 characters long <br>
+    and cannot be an ID already in the database.
+  </p> <br>
+
+  <form action="CreateUser.php">
+    New User ID:
+    <input type="text" name="user_id" id="user_id"> <br>
+    <input type="submit" value="Create User"> <br>
+  </form>
+</body>
+</html>
