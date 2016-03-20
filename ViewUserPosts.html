@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title> View User Posts </title>
+</head>
+
+<body>
+  <h1> View User Posts </h1>
+
+  <p>
+    Use the dropdown menu below to select a user.<br>
+    Click Submit to see a list of all the posts that user has made.
+  </p> <br>
+
+  <form action="ViewUserPosts.php" method="post">
+    Select User ID:
+    <select name="userDropdown">
+      <?php include 'ViewPostsBack.php';?>
+      <!-- optional way to display dropdown list of users
+      <?php
+      $mysqli = new mysqli("mysql.eecs.ku.edu", "jgray", "jgray1", "jgray");
+
+      //check connection
+      if($mysqli->connect_errno)
+      {
+        printf("Connect failed: %s\n", $mysqli->connect_error);
+        exit();
+      }
+
+      $query = "SELECT user_id FROM Users";
+
+      if($result = $mysqli->query($query))
+      {
+        while($row = $result->fetch_assoc())
+        {
+          echo "<option value=".$row["user_id"].">".$row["user_id"]."</option>";
+        }
+
+        //free result set
+        $result->free();
+      }
+
+      //close connection
+      $mysqli->close();
+      ?>
+    -->
+    </select> <br><br>
+
+	<input type="submit" value="Submit"> <br>
+  </form>
+</body>
+</html>
