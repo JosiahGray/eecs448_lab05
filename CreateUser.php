@@ -10,16 +10,29 @@ if($mysqli->connect_errno)
 
 $username = $_POST["user_id"];
 
-$query = "INSERT INTO Users (user_id) VALUES ('$username');";
-
-if($result = $mysqli->query($query))
+if($username == "")
 {
-  echo "$username was successfully added to the database!\n";
+  echo "ERROR: User ID cannot be blank.<br>";
 }
 else
 {
-  echo "ERROR: $username is already in the database\n or otherwise could not be added.\n";
+  $query = "INSERT INTO Users (user_id) VALUES ('$username');";
+
+  //attempt to insert username into database
+  if($result = $mysqli->query($query))
+  {
+    echo "$username was successfully added to the database!<br>";
+  }
+  else
+  {
+    echo "ERROR: \"$username\" is already in the database or otherwise could not be added.<br>";
+  }
 }
 
-echo "<br><a href='http://people.eecs.ku.edu/~jgray/eecs_448/lab05/CreateUser.html'> Return to CreateUser page </a>";
+//provide a link to go back
+echo "<br><a href=\"http://people.eecs.ku.edu/~jgray/eecs_448/lab05/CreateUser.html\"> Return to CreateUser page </a>";
+
+//close connection
+//$result->free();
+$mysqli->close();
 ?>
