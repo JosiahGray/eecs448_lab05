@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title> Delete Posts </title>
+</head>
+
+<body>
+  <h1> Delete Posts </h1>
+
+  <p>
+    Check the box(es) next to post(s) you want to delete,<br>
+    Click Submit to delete.
+  </p> <br>
+
+  <form action="DeletePost.php" method="post">
+    <table border="1">
+      <tr>
+        <th> Delete? </th>
+        <th> Post ID </th>
+        <th> Author </th>
+        <th> Post </th>
+      </tr>
+
+      <?php include 'DeleteBack.php';?>
+
+    </table> <br><br>
+
+	<input type="submit" value="Submit"> <br>
+  </form>
+</body>
+</html>
