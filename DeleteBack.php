@@ -15,7 +15,7 @@ if($result = $mysqli->query($query))
   while($row = $result->fetch_assoc())
   {
     echo "<tr>";
-    echo "<td><input type=\"checkbox\" name=\"check_list[]\"></td>";
+    echo "<td><input type=\"checkbox\" name=\"check_list[]\" value=".$row["post_id"]."></td>";
     echo "<td>".$row["post_id"]."</td>";
     echo "<td>".$row["author_id"]."</td>";
     echo "<td>".$row["content"]."</td>";
